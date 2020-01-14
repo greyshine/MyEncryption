@@ -1,41 +1,73 @@
 <project xmlns="http://maven.apache.org/POM/4.0.0"
-    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-    xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
 
-    <modelVersion>4.0.0</modelVersion>
+	<modelVersion>4.0.0</modelVersion>
 
-    <groupId>greyshine</groupId>
-    <artifactId>my-encryption</artifactId>
-    <version>1.0</version>
+	<groupId>greyshine</groupId>
+	<artifactId>my-encryption</artifactId>
+	<version>1.0</version>
 
-    <name>MyEncryption</name>
+	<name>MyEncryption</name>
 
-    <url>https://github.com/greyshine/MyEncryption</url>
+	<url>https://github.com/greyshine/MyEncryption</url>
 
-    <properties>
-        <maven.compiler.target>1.8</maven.compiler.target>
-        <maven.compiler.source>1.8</maven.compiler.source>
-        <java.version>1.8</java.version>
-    </properties>
+	<properties>
+		<maven.compiler.target>1.8</maven.compiler.target>
+		<maven.compiler.source>1.8</maven.compiler.source>
+		<java.version>1.8</java.version>
+	</properties>
 
-    <dependencies>
-    
-        <!-- https://mvnrepository.com/artifact/junit/junit -->
+	<dependencies>
+
+		<!-- https://mvnrepository.com/artifact/junit/junit -->
 		<dependency>
-		    <groupId>junit</groupId>
-		    <artifactId>junit</artifactId>
-		    <version>4.12</version>
-		    <scope>test</scope>
+			<groupId>junit</groupId>
+			<artifactId>junit</artifactId>
+			<version>4.12</version>
+			<scope>test</scope>
 		</dependency>
-       
-    </dependencies>
 
-    <build>
-        <finalName>MyEncryption-${project.version}</finalName>
-    </build>
-    
-    <profiles>
-        <!-- https://www.baeldung.com/maven-profiles -->
-    </profiles>
+	</dependencies>
+
+	<build>
+		<finalName>MyEncryption-${project.version}</finalName>
+
+		<plugins>
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-source-plugin</artifactId>
+				<executions>
+					<execution>
+						<id>attach-sources</id>
+						<goals>
+							<goal>jar</goal>
+						</goals>
+					</execution>
+				</executions>
+			</plugin>
+
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-javadoc-plugin</artifactId>
+				<executions>
+					<execution>
+						<id>attach-javadocs</id>
+						<goals>
+							<goal>jar</goal>
+						</goals>
+					</execution>
+				</executions>
+			</plugin>
+
+		</plugins>
+
+	</build>
+
+	<profiles>
+		<!-- https://www.baeldung.com/maven-profiles -->
+	</profiles>
+
+
 
 </project>
