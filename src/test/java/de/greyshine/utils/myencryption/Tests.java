@@ -1,7 +1,5 @@
 package de.greyshine.utils.myencryption;
 
-import javax.sound.midi.Soundbank;
-
 import org.junit.Assert;
 import org.junit.Ignore;
 import org.junit.Test;
