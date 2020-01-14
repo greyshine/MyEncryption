@@ -41,6 +41,7 @@ public class Tests {
 	}
 	
 	@Test
+	@Ignore
 	public void testV2() {
 		
 		final Encrypter v2e = EncrypterFactory.get( V2EncrypterImpl.NAME );
@@ -56,6 +57,11 @@ public class Tests {
 		String decrypted = v2e.decrypt( encrypted , pwd );
 		System.out.println( "DEC: "+ decrypted );
 		
+		Assert.assertEquals( decrypted, sentence );
+		
+		encrypted = v2e.encrypt( sentence , null );
+		System.out.println( encrypted );
+		decrypted = v2e.decrypt( encrypted , null );
 		Assert.assertEquals( decrypted, sentence );
 	}
 	
