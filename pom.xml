@@ -6,7 +6,7 @@
 
     <groupId>greyshine</groupId>
     <artifactId>my-encryption</artifactId>
-    <version>1.0-SNAPSHOT</version>
+    <version>1.0</version>
 
     <name>MyEncryption</name>
 
@@ -31,6 +31,7 @@
     </dependencies>
 
     <build>
+        <finalName>MyEncryption-${project.version}</finalName>
     </build>
     
     <profiles>
